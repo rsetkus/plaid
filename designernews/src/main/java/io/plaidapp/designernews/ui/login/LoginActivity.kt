@@ -18,7 +18,6 @@ package io.plaidapp.designernews.ui.login
 
 import android.app.Activity
 import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.os.Bundle
 import android.support.annotation.StringRes
@@ -37,9 +36,10 @@ import io.plaidapp.core.util.delegates.contentView
 import io.plaidapp.core.util.doAfterTextChanged
 import io.plaidapp.core.util.event.EventObserver
 import io.plaidapp.designernews.R
+import io.plaidapp.designernews.dagger.inject
 import io.plaidapp.designernews.databinding.ActivityDesignerNewsLoginBinding
 import io.plaidapp.designernews.databinding.ToastLoggedInConfirmationBinding
-import io.plaidapp.designernews.provideViewModelFactory
+import javax.inject.Inject
 import io.plaidapp.R as appR
 
 class LoginActivity : AppCompatActivity() {
@@ -48,13 +48,13 @@ class LoginActivity : AppCompatActivity() {
         R.layout.activity_designer_news_login
     )
 
-    private lateinit var viewModel: LoginViewModel
+    @Inject
+    lateinit var viewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val factory = provideViewModelFactory(this)
-        viewModel = ViewModelProviders.of(this, factory).get(LoginViewModel::class.java)
+        inject(this)
 
         binding.setLifecycleOwner(this)
         binding.viewModel = viewModel

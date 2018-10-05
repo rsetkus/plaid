@@ -26,13 +26,14 @@ import io.plaidapp.core.designernews.data.login.LoginRepository
 import io.plaidapp.core.util.event.Event
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * View Model for [LoginActivity]
  */
 private const val signupUrl = "https://www.designernews.co/users/new"
 
-class LoginViewModel(
+class LoginViewModel @Inject constructor(
     private val loginRepository: LoginRepository,
     private val contextProvider: CoroutinesContextProvider
 ) : ViewModel() {

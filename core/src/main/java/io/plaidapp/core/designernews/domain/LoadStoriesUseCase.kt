@@ -25,11 +25,12 @@ import io.plaidapp.core.designernews.data.stories.model.toStory
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
 /**
  * Use case that loads stories from [StoriesRepository].
  */
-class LoadStoriesUseCase(
+class LoadStoriesUseCase @Inject constructor(
     private val storiesRepository: StoriesRepository,
     private val contextProvider: CoroutinesContextProvider
 ) {
