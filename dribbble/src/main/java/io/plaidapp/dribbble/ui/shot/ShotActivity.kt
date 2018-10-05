@@ -252,7 +252,7 @@ class ShotActivity : AppCompatActivity() {
         }
     }
 
-    internal fun applyFullImagePalette(palette: Palette) {
+    internal fun applyFullImagePalette(palette: Palette?) {
         // color the ripple on the image spacer (default is grey)
         binding.shotSpacer.background = ViewUtils.createRipple(
             palette, 0.25f, 0.5f,
@@ -265,7 +265,7 @@ class ShotActivity : AppCompatActivity() {
         )
     }
 
-    internal fun applyTopPalette(bitmap: Bitmap, palette: Palette) {
+    internal fun applyTopPalette(bitmap: Bitmap, palette: Palette?) {
         val lightness = ColorUtils.isDark(palette)
         val isDark = if (lightness == ColorUtils.LIGHTNESS_UNKNOWN) {
             ColorUtils.isDark(bitmap, bitmap.width / 2, 0)

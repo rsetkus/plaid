@@ -58,8 +58,8 @@ dependencies {
     testImplementation "org.mockito:mockito-core:${versions.mockito}"
 
     // Work around issue with runtime classpath version conflict
-    androidTestImplementation "com.android.support:support-core-utils:${versions.supportLibrary}"
-    androidTestImplementation "android.arch.lifecycle:runtime:${versions.lifecycle}"
+    implementation "com.android.support:support-core-utils:${versions.supportLibrary}"
+    implementation "android.arch.lifecycle:runtime:${versions.lifecycle}"
 }
 
 kotlin {

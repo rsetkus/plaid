@@ -51,6 +51,8 @@ repositories {
 dependencies {
     implementation project(':app')
 
+    kapt "com.google.dagger:dagger-compiler:${versions.dagger}"
+
     testImplementation project(':test_shared')
     testImplementation "android.arch.core:core-testing:${versions.lifecycle}"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockito_kotlin}"
@@ -58,8 +60,9 @@ dependencies {
     testImplementation "org.mockito:mockito-core:${versions.mockito}"
 
     // Work around issue with runtime classpath version conflict
-    androidTestImplementation "com.android.support:support-core-utils:${versions.supportLibrary}"
-    androidTestImplementation "android.arch.lifecycle:runtime:${versions.lifecycle}"
+    implementation "com.android.support:support-core-utils:${versions.supportLibrary}"
+    implementation "android.arch.lifecycle:runtime:${versions.lifecycle}"
+
 }
 
 kotlin {

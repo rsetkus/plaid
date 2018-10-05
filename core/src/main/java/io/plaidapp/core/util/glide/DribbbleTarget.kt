@@ -27,8 +27,8 @@ import io.plaidapp.core.R
 import io.plaidapp.core.ui.widget.BadgedFourThreeImageView
 import io.plaidapp.core.util.ColorUtils
 import io.plaidapp.core.util.ViewUtils
-import io.plaidapp.core.util.measured
 import io.plaidapp.core.util.isAnimated
+import io.plaidapp.core.util.measured
 
 /**
  * A Glide [com.bumptech.glide.request.target.ViewTarget] for [BadgedFourThreeImageView]s.
@@ -66,7 +66,7 @@ class DribbbleTarget(
         }
     }
 
-    override fun onGenerated(palette: Palette) {
+    override fun onGenerated(palette: Palette?) {
         badgedImageView.foreground = ViewUtils.createRipple(palette, 0.25f, 0.5f,
                 ContextCompat.getColor(view.context, R.color.mid_grey), true)
     }
