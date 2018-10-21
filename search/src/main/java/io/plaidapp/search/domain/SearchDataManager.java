@@ -15,7 +15,7 @@
  *
  */
 
-package io.plaidapp.search;
+package io.plaidapp.search.domain;
 
 import android.content.Context;
 import io.plaidapp.core.data.BaseDataManager;
